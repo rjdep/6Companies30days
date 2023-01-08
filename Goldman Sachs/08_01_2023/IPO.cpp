@@ -1,30 +1,35 @@
 class Solution {
 public:
     int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
-        vector<pair<int,int>> v;
+        vector<vector<int>> v;
         int n = profits.size();
         for(int i=0; i<n; i++){
             v.push_back({capital[i],profits[i]});
         }
         sort(v.begin(),v.end());
-        priority_queue<int> cap,pro;
+        int i = 0;
         int ans = w;
-        for(int i=0; i<n; i++) cap.push(-i);
-        while(1){
+        priority_queue<int> pq;
+        while(i<n){
             int mx = ans;
-            while(!cap.empty() && v[-cap.top()].first<=ans){
-                pro.push(v[-cap.top()].second);
-                cap.pop();
+            while(i<n && v[i][0]<=ans){
+                pq.push(v[i][1]);
+                i++;
             }
-            if(k>0){
-                if(!pro.empty()){
-                    ans += pro.top();
-                    pro.pop();
-                    k--;
-                }
+            if(!pq.empty() && k>0){
+                ans += pq.top();
+                pq.pop();
+                k--;
             }
-            if(mx==ans || k==0) break;
+            if(k==0 || ans==mx) break;
+        }
+        while(!pq.empty()){
+            if(k==0) break;
+            ans += pq.top();
+            pq.pop();
+            k--;
         }
         return ans;
     }
+
 };
