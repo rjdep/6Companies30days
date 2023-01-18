@@ -44,3 +44,12 @@ public:
         return rec(n,k)+1;
     }
 };
+
+/*
+    For k = 2, their is a general answer:
+    if n is a power of 2, the answer will always be 1
+    else n = 2^a + l, l<2^a;
+        so iterate over to get the lth steps at k separation, the answer will be the (2*l + 1)th person.
+        
+    
+*/
