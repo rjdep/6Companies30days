@@ -66,3 +66,8 @@ The dataset consists of weather images organized into subdirectories, where each
 - **Validation Accuracy**: 80.12%
 - **Test Accuracy**: 86.65%
 
+## Accuracy and Loss Plot
+
+Below is the plot showing the accuracy and loss across epochs during training and validation:
+
+![Accuracy and Loss Plot](https://drive.google.com/uc?id=1eeC7ZS8fCBb8YF0ZMAQ6r1DzkBR5huEI)
