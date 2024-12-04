@@ -62,7 +62,7 @@ The dataset consists of weather images organized into subdirectories, where each
   
 - After training for 15 epochs, the model achieved:
 
-- **Training Accuracy**: XX.XX%
-- **Validation Accuracy**: XX.XX%
-- **Test Accuracy**: XX.XX%
+- **Training Accuracy**: 82.32%
+- **Validation Accuracy**: 80.12%
+- **Test Accuracy**: 86.65%
 
